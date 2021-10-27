@@ -1,0 +1,15 @@
+{
+  "name": "My-Personal-BLOG.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files."
+  },
+  "repository": "https://github.com/Ramesh-Chathuranga/My-Personal-BLOG.io.git",
+  "author": "Ramesh-Chathuranga <rmrcchathuranga@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.27.6"
+  }
+}
