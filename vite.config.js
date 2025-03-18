@@ -6,4 +6,9 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),  tailwindcss()],
   base: "/My-Personal-BLOG.io", 
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  }
 })
+//  "homepage": "https://ramesh-chathuranga.github.io/My-Personal-BLOG.io/",

@@ -1,12 +1,12 @@
-import React from 'react'
-import {Tilt} from "react-tilt";
+import React from "react";
+import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/mortion";
+import { fadeIn, textVariant, slideIn } from "../utils/mortion";
 
 const ProjectCard = ({
   index,
@@ -17,7 +17,29 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+
+    <motion.div
+      // variants={textVariant()}
+      // variants={fadeIn("down", "spring", , )}
+      animate={{
+        x: 0,
+        y: 100,
+        opacity: 1,
+        transition: {
+          default: { type: "spring" },
+          opacity: { ease: "linear" }
+        }
+      }}
+
+      transition={{
+        duration: 0.75,
+        delay: index * 0.5,
+        ease: [0, 0.71, 0.2, 1.01],
+        type: "spring"
+      }}
+    >
+
+
       <Tilt
         options={{
           max: 45,
@@ -63,6 +85,8 @@ const ProjectCard = ({
           ))}
         </div>
       </Tilt>
+
+
     </motion.div>
   );
 };
@@ -88,7 +112,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-20 flex flex-wrap gap-6'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
